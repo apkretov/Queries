@@ -1,0 +1,1608 @@
+USE Timber --Inserting mcpfe-2011 data into Total_Full_McpfeDb_2011
+GO
+BEGIN TRANSACTION;
+EXECUTE usp_DROP_CREATE_DATA_Excluded 'y'; -- Drop & create the DATA_Excluded table for the data to be exlcluded from uploading the Total_Full_McpfeDb_2011 table by the usp_INSERT_Total_Full_McpfeDb_2011 procedure.
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'y', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'394',
+--	@TERM_NAME = N'1 Boreal/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'395',
+--	@TERM_NAME = N'2 Hemiboreal/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'396',
+--	@TERM_NAME = N'3 Alpine/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'397',
+--	@TERM_NAME = N'4 Acidophilous/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'398',
+--	@TERM_NAME = N'5 Mesophytic/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'399',
+--	@TERM_NAME = N'6 Beech/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'400',
+--	@TERM_NAME = N'7 Mountainous/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'401',
+--	@TERM_NAME = N'8 Thermophilous/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'402',
+--	@TERM_NAME = N'9 Brd evergreen/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'403',
+--	@TERM_NAME = N'10 Conifer/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'404',
+--	@TERM_NAME = N'11 Mire/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'405',
+--	@TERM_NAME = N'12 Floodplain/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'406',
+--	@TERM_NAME = N'13 Non-riverine/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'407',
+--	@TERM_NAME = N'14 Introduced/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 1,
+--		@Group_E = N'Area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'408',
+--	@TERM_NAME = N'Unclassified/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+
+
+
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'409',
+--	@TERM_NAME = N'1 Boreal/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'410',
+--	@TERM_NAME = N'2 Hemiboreal/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'411',
+--	@TERM_NAME = N'3 Alpine/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'412',
+--	@TERM_NAME = N'4 Acidophilous/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'413',
+--	@TERM_NAME = N'5 Mesophytic/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'414',
+--	@TERM_NAME = N'6 Beech/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'415',
+--	@TERM_NAME = N'7 Mountainous/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'416',
+--	@TERM_NAME = N'8 Thermophilous/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'417',
+--	@TERM_NAME = N'9 Brd evergreen/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'418',
+--	@TERM_NAME = N'10 Conifer/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'419',
+--	@TERM_NAME = N'11 Mire/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'420',
+--	@TERM_NAME = N'12 Floodplain/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'421',
+--	@TERM_NAME = N'13 Non-riverine/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'422',
+--	@TERM_NAME = N'14 Introduced/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 30,
+--		@Group_E = N'Total Volume (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'423',
+--	@TERM_NAME = N'Unclassified/Total volume',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--
+--
+--
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'424',
+--	@TERM_NAME = N'1 Boreal/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'425',
+--	@TERM_NAME = N'2 Hemiboreal/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'426',
+--	@TERM_NAME = N'3 Alpine/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'427',
+--	@TERM_NAME = N'4 Acidophilous/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'428',
+--	@TERM_NAME = N'5 Mesophytic/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'429',
+--	@TERM_NAME = N'6 Beech/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'430',
+--	@TERM_NAME = N'7 Mountainous/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'431',
+--	@TERM_NAME = N'8 Thermophilous/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'432',
+--	@TERM_NAME = N'9 Brd evergreen/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'433',
+--	@TERM_NAME = N'10 Conifer/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'434',
+--	@TERM_NAME = N'11 Mire/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'435',
+--	@TERM_NAME = N'12 Floodplain/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'436',
+--	@TERM_NAME = N'13 Non-riverine/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'437',
+--	@TERM_NAME = N'14 Introduced/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 31,
+--		@Group_E = N'Volume by diameter classes: 0-20 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'438',
+--	@TERM_NAME = N'Unclassified/0-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--
+--
+--
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'439',
+--	@TERM_NAME = N'1 Boreal/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'440',
+--	@TERM_NAME = N'2 Hemiboreal/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'441',
+--	@TERM_NAME = N'3 Alpine/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'442',
+--	@TERM_NAME = N'4 Acidophilous/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'443',
+--	@TERM_NAME = N'5 Mesophytic/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'444',
+--	@TERM_NAME = N'6 Beech/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'445',
+--	@TERM_NAME = N'7 Mountainous/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'446',
+--	@TERM_NAME = N'8 Thermophilous/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'447',
+--	@TERM_NAME = N'9 Brd evergreen/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'448',
+--	@TERM_NAME = N'10 Conifer/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'449',
+--	@TERM_NAME = N'11 Mire/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'450',
+--	@TERM_NAME = N'12 Floodplain/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'451',
+--	@TERM_NAME = N'13 Non-riverine/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'452',
+--	@TERM_NAME = N'14 Introduced/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 32,
+--		@Group_E = N'Volume by diameter classes: 21-40 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'453',
+--	@TERM_NAME = N'Unclassified/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--
+--
+--
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'454',
+--	@TERM_NAME = N'1 Boreal/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'455',
+--	@TERM_NAME = N'2 Hemiboreal/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'456',
+--	@TERM_NAME = N'3 Alpine/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'457',
+--	@TERM_NAME = N'4 Acidophilous/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'458',
+--	@TERM_NAME = N'5 Mesophytic/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'459',
+--	@TERM_NAME = N'6 Beech/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'460',
+--	@TERM_NAME = N'7 Mountainous/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'461',
+--	@TERM_NAME = N'8 Thermophilous/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'462',
+--	@TERM_NAME = N'9 Brd evergreen/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'463',
+--	@TERM_NAME = N'10 Conifer/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'464',
+--	@TERM_NAME = N'11 Mire/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'465',
+--	@TERM_NAME = N'12 Floodplain/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'466',
+--	@TERM_NAME = N'13 Non-riverine/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'467',
+--	@TERM_NAME = N'14 Introduced/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 33,
+--		@Group_E = N'Volume by diameter classes: 41-60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'468',
+--	@TERM_NAME = N'Unclassified/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--
+--
+--
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'469',
+--	@TERM_NAME = N'1 Boreal/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'470',
+--	@TERM_NAME = N'2 Hemiboreal/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'471',
+--	@TERM_NAME = N'3 Alpine/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'472',
+--	@TERM_NAME = N'4 Acidophilous/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'473',
+--	@TERM_NAME = N'5 Mesophytic/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'474',
+--	@TERM_NAME = N'6 Beech/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'475',
+--	@TERM_NAME = N'7 Mountainous/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'476',
+--	@TERM_NAME = N'8 Thermophilous/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'477',
+--	@TERM_NAME = N'9 Brd evergreen/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'478',
+--	@TERM_NAME = N'10 Conifer/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'479',
+--	@TERM_NAME = N'11 Mire/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'480',
+--	@TERM_NAME = N'12 Floodplain/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'481',
+--	@TERM_NAME = N'13 Non-riverine/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'482',
+--	@TERM_NAME = N'14 Introduced/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 34,
+--		@Group_E = N'Volume by diameter classes: >60 cm (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'483',
+--	@TERM_NAME = N'Unclassified/60+',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--
+--
+--
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'484',
+--	@TERM_NAME = N'1 Boreal/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'485',
+--	@TERM_NAME = N'2 Hemiboreal/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'486',
+--	@TERM_NAME = N'3 Alpine/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'487',
+--	@TERM_NAME = N'4 Acidophilous/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'488',
+--	@TERM_NAME = N'5 Mesophytic/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'489',
+--	@TERM_NAME = N'6 Beech/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'490',
+--	@TERM_NAME = N'7 Mountainous/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'491',
+--	@TERM_NAME = N'8 Thermophilous/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'492',
+--	@TERM_NAME = N'9 Brd evergreen/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'493',
+--	@TERM_NAME = N'10 Conifer/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'494',
+--	@TERM_NAME = N'11 Mire/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'495',
+--	@TERM_NAME = N'12 Floodplain/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'496',
+--	@TERM_NAME = N'13 Non-riverine/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'497',
+--	@TERM_NAME = N'14 Introduced/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 35,
+--		@Group_E = N'Volume by diameter classes: Unspecified (1000 m³ o.b.)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 23,
+--		@ReportingForm_E = N'Form 1.3d: Diameter distribution and total area (uneven-aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'498',
+--	@TERM_NAME = N'Unclassified/Unspec diam',
+--	@STATE_STRUCTURE_NAME = N'F1.3d';
+
+EXECUTE usp_DROP_CREATE_DATA_Excluded 'n'; -- Drop the DATA_Excluded table.
+--COMMIT TRANSACTION;
+ROLLBACK TRANSACTION;
+GO

@@ -1,0 +1,250 @@
+USE Timber_2011 --Inserting mcpfe-2011 data into Total_Full_McpfeDb_2011
+GO
+--BEGIN TRANSACTION;
+--EXECUTE usp_DROP_CREATE_DATA_Excluded 'y'; -- Drop & create the DATA_Excluded table for the data to be exlcluded from uploading the Total_Full_McpfeDb_2011 table by the usp_INSERT_Total_Full_McpfeDb_2011 procedure.
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 1,
+--		@Topic_E = N'Forest',
+--	@Insert_Group = 'y',
+--		@Group_ID = 71,
+--		@Group_E = N'Volume of deadwood: Total (m³/ha)',
+--	@Insert_ReportingForm = 'y', 
+--		@ReportingForm_ID = 27,
+--		@ReportingForm_E = N'Form 4.5a: Deadwood',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'Forest/Deadwood total',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 3,
+--		@Topic_E = N'Other wooded land',
+--	@Insert_Group = 'n',
+--		@Group_ID = 71,
+--		@Group_E = N'-',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 27,
+--		@ReportingForm_E = N'-',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'OWL/Deadwood total',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 4,
+--		@Topic_E = N'Total forest and other wooded land',
+--	@Insert_Group = 'n',
+--		@Group_ID = 71,
+--		@Group_E = N'-',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 27,
+--		@ReportingForm_E = N'-',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'FOWL/Deadwood total',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+--
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 1,
+--		@Topic_E = N'Forest',
+--	@Insert_Group = 'y',
+--		@Group_ID = 72,
+--		@Group_E = N'Volume of deadwood: Standing (m³/ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 27,
+--		@ReportingForm_E = N'Form 4.5a: Deadwood',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'Forest/Standing',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 3,
+--		@Topic_E = N'Other wooded land',
+--	@Insert_Group = 'n',
+--		@Group_ID = 72,
+--		@Group_E = N'-',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 27,
+--		@ReportingForm_E = N'-',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'OWL/Standing',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 4,
+--		@Topic_E = N'Total forest and other wooded land',
+--	@Insert_Group = 'n',
+--		@Group_ID = 72,
+--		@Group_E = N'-',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 27,
+--		@ReportingForm_E = N'-',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'FOWL/Standing',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 1,
+--		@Topic_E = N'Forest',
+--	@Insert_Group = 'y',
+--		@Group_ID = 73,
+--		@Group_E = N'Volume of deadwood: Lying (m³/ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 27,
+--		@ReportingForm_E = N'Form 4.5a: Deadwood',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'Forest/Lying',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 3,
+--		@Topic_E = N'Other wooded land',
+--	@Insert_Group = 'n',
+--		@Group_ID = 73,
+--		@Group_E = N'-',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 27,
+--		@ReportingForm_E = N'-',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'OWL/Lying',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 4,
+--		@Topic_E = N'Total forest and other wooded land',
+--	@Insert_Group = 'n',
+--		@Group_ID = 73,
+--		@Group_E = N'-',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 27,
+--		@ReportingForm_E = N'-',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'FOWL/Lying',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'y',
+--		@Topic_ID = 63,
+--		@Topic_E = N'FOWL by species group – Coniferous', --N'Coniferous',
+--	@Insert_Group = 'n',
+--		@Group_ID = 71,
+--		@Group_E = N'Volume of deadwood: Total (m³/ha)',
+--	@Insert_ReportingForm = 'y', 
+--		@ReportingForm_ID = 27, --28,
+--		@ReportingForm_E = N'Form 4.5a: Deadwood - Volume of deadwood in FOWL by species groups',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'FOWL/Coniferous/Deadwood total',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'y',
+--		@Topic_ID = 64,
+--		@Topic_E = N'FOWL by species group – Broadleaved', --N'Broadleaved',
+--	@Insert_Group = 'n',
+--		@Group_ID = 71,
+--		@Group_E = N'-',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 27, --28,
+--		@ReportingForm_E = N'-',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'FOWL/Broadleaved/Deadwood total',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 63,
+--		@Topic_E = N'FOWL by species group – Coniferous', --N'Coniferous',
+--	@Insert_Group = 'n',
+--		@Group_ID = 72,
+--		@Group_E = N'-',
+--	@Insert_ReportingForm = 'n',
+--		@ReportingForm_ID = 27, --28,
+--		@ReportingForm_E = N'Form 4.5a: Deadwood - Volume of deadwood in FOWL by species groups',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'FOWL/Coniferous/Standing',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 64,
+--		@Topic_E = N'FOWL by species group – Broadleaved', --N'Broadleaved',
+--	@Insert_Group = 'n',
+--		@Group_ID = 72,
+--		@Group_E = N'-',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 27, --28,
+--		@ReportingForm_E = N'-',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'FOWL/Broadleaved/Standing',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 63,
+--		@Topic_E = N'FOWL by species group – Coniferous', --N'Coniferous',
+--	@Insert_Group = 'n',
+--		@Group_ID = 73,
+--		@Group_E = N'-',
+--	@Insert_ReportingForm = 'n',
+--		@ReportingForm_ID = 27, --28,
+--		@ReportingForm_E = N'Form 4.5a: Deadwood - Volume of deadwood in FOWL by species groups',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'FOWL/Coniferous/Lying',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 64,
+--		@Topic_E = N'FOWL by species group – Broadleaved', --N'Broadleaved',
+--	@Insert_Group = 'n',
+--		@Group_ID = 73,
+--		@Group_E = N'-',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 27, --28,
+--		@ReportingForm_E = N'-',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'0',
+--	@TERM_NAME = N'FOWL/Broadleaved/Lying',
+--	@STATE_STRUCTURE_NAME = N'F4.5a';
+
+--EXECUTE usp_DROP_CREATE_DATA_Excluded 'n'; -- Drop the DATA_Excluded table.
+--COMMIT TRANSACTION;
+----ROLLBACK TRANSACTION;
+
+--BEGIN TRANSACTION
+----SELECT YEAR
+----FROM Total_Full_McpfeDb_2011
+--UPDATE Total_Full_McpfeDb_2011
+--SET YEAR = N'2005' -- Roman: Year 1990 to 2005
+--WHERE DIMENSION_ID BETWEEN 602 AND 607
+--	AND YEAR = N'1990'
+--ROLLBACK TRANSACTION
+----COMMIT TRANSACTION
+
+GO

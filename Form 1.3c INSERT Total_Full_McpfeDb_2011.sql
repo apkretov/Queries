@@ -1,0 +1,2524 @@
+USE Timber --Inserting mcpfe-2011 data into Total_Full_McpfeDb_2011
+GO
+BEGIN TRANSACTION;
+EXECUTE usp_DROP_CREATE_DATA_Excluded 'y'; -- Drop & create the DATA_Excluded table for the data to be exlcluded from uploading the Total_Full_McpfeDb_2011 table by the usp_INSERT_Total_Full_McpfeDb_2011 procedure.
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'y', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'229',
+--	@TERM_NAME = N'1 Boreal/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'230',
+--	@TERM_NAME = N'2 Hemiboreal/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+ 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'231',
+--	@TERM_NAME = N'3 Alpine/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'232',
+--	@TERM_NAME = N'4 Acidophilous/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'233',
+--	@TERM_NAME = N'5 Mesophytic/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'234',
+--	@TERM_NAME = N'6 Beech/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'235',
+--	@TERM_NAME = N'7 Mountainous/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'236',
+--	@TERM_NAME = N'8 Thermophilous/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'237',
+--	@TERM_NAME = N'9 Brd evergreen/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'238',
+--	@TERM_NAME = N'10 Conifer/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'239',
+--	@TERM_NAME = N'11 Mire/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'240',
+--	@TERM_NAME = N'12 Floodplain/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'241',
+--	@TERM_NAME = N'13 Non-riverine/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'242',
+--	@TERM_NAME = N'14 Introduced/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 19,
+--		@Group_E = N'Total area (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'243',
+--	@TERM_NAME = N'Unclassified/Total area',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+
+
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'244',
+--	@TERM_NAME = N'1 Boreal/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'245',
+--	@TERM_NAME = N'2 Hemiboreal/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'246',
+--	@TERM_NAME = N'3 Alpine/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'247',
+--	@TERM_NAME = N'4 Acidophilous/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'248',
+--	@TERM_NAME = N'5 Mesophytic/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'249',
+--	@TERM_NAME = N'6 Beech/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'250',
+--	@TERM_NAME = N'7 Mountainous/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'251',
+--	@TERM_NAME = N'8 Thermophilous/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'252',
+--	@TERM_NAME = N'9 Brd evergreen/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'253',
+--	@TERM_NAME = N'10 Conifer/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'254',
+--	@TERM_NAME = N'11 Mire/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'255',
+--	@TERM_NAME = N'12 Floodplain/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'256',
+--	@TERM_NAME = N'13 Non-riverine/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'257',
+--	@TERM_NAME = N'14 Introduced/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 20,
+--		@Group_E = N'Area by age classes: 0-10 years (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'258',
+--	@TERM_NAME = N'Unclassified/0-10',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+
+
+
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'259',
+--	@TERM_NAME = N'1 Boreal/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'260',
+--	@TERM_NAME = N'2 Hemiboreal/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'261',
+--	@TERM_NAME = N'3 Alpine/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'262',
+--	@TERM_NAME = N'4 Acidophilous/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'263',
+--	@TERM_NAME = N'5 Mesophytic/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'264',
+--	@TERM_NAME = N'6 Beech/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'265',
+--	@TERM_NAME = N'7 Mountainous/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'266',
+--	@TERM_NAME = N'8 Thermophilous/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'267',
+--	@TERM_NAME = N'9 Brd evergreen/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'268',
+--	@TERM_NAME = N'10 Conifer/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'269',
+--	@TERM_NAME = N'11 Mire/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'270',
+--	@TERM_NAME = N'12 Floodplain/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'271',
+--	@TERM_NAME = N'13 Non-riverine/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'272',
+--	@TERM_NAME = N'14 Introduced/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 21,
+--		@Group_E = N'Area by age classes: 11-20 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'273',
+--	@TERM_NAME = N'Unclassified/11-20',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+
+
+
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'274',
+--	@TERM_NAME = N'1 Boreal/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'275',
+--	@TERM_NAME = N'2 Hemiboreal/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'276',
+--	@TERM_NAME = N'3 Alpine/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'277',
+--	@TERM_NAME = N'4 Acidophilous/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'278',
+--	@TERM_NAME = N'5 Mesophytic/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'279',
+--	@TERM_NAME = N'6 Beech/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'280',
+--	@TERM_NAME = N'7 Mountainous/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'281',
+--	@TERM_NAME = N'8 Thermophilous/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'282',
+--	@TERM_NAME = N'9 Brd evergreen/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'283',
+--	@TERM_NAME = N'10 Conifer/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'284',
+--	@TERM_NAME = N'11 Mire/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'285',
+--	@TERM_NAME = N'12 Floodplain/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'286',
+--	@TERM_NAME = N'13 Non-riverine/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'287',
+--	@TERM_NAME = N'14 Introduced/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 22,
+--		@Group_E = N'Area by age classes: 21-40 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'288',
+--	@TERM_NAME = N'Unclassified/21-40',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--
+--
+--
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'289',
+--	@TERM_NAME = N'1 Boreal/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'290',
+--	@TERM_NAME = N'2 Hemiboreal/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'291',
+--	@TERM_NAME = N'3 Alpine/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'292',
+--	@TERM_NAME = N'4 Acidophilous/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'293',
+--	@TERM_NAME = N'5 Mesophytic/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'294',
+--	@TERM_NAME = N'6 Beech/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'295',
+--	@TERM_NAME = N'7 Mountainous/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'296',
+--	@TERM_NAME = N'8 Thermophilous/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'297',
+--	@TERM_NAME = N'9 Brd evergreen/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'298',
+--	@TERM_NAME = N'10 Conifer/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'299',
+--	@TERM_NAME = N'11 Mire/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'300',
+--	@TERM_NAME = N'12 Floodplain/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'301',
+--	@TERM_NAME = N'13 Non-riverine/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'302',
+--	@TERM_NAME = N'14 Introduced/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 23,
+--		@Group_E = N'Area by age classes: 41-60 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'303',
+--	@TERM_NAME = N'Unclassified/41-60',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--
+--
+--
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'304',
+--	@TERM_NAME = N'1 Boreal/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'305',
+--	@TERM_NAME = N'2 Hemiboreal/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'306',
+--	@TERM_NAME = N'3 Alpine/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'307',
+--	@TERM_NAME = N'4 Acidophilous/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'308',
+--	@TERM_NAME = N'5 Mesophytic/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'309',
+--	@TERM_NAME = N'6 Beech/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'310',
+--	@TERM_NAME = N'7 Mountainous/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'311',
+--	@TERM_NAME = N'8 Thermophilous/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'312',
+--	@TERM_NAME = N'9 Brd evergreen/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'313',
+--	@TERM_NAME = N'10 Conifer/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'314',
+--	@TERM_NAME = N'11 Mire/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'315',
+--	@TERM_NAME = N'12 Floodplain/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'316',
+--	@TERM_NAME = N'13 Non-riverine/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'317',
+--	@TERM_NAME = N'14 Introduced/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 24,
+--		@Group_E = N'Area by age classes: 61-80 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'318',
+--	@TERM_NAME = N'Unclassified/61-80',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--
+--
+--
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'319',
+--	@TERM_NAME = N'1 Boreal/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'320',
+--	@TERM_NAME = N'2 Hemiboreal/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'321',
+--	@TERM_NAME = N'3 Alpine/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'322',
+--	@TERM_NAME = N'4 Acidophilous/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'323',
+--	@TERM_NAME = N'5 Mesophytic/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'324',
+--	@TERM_NAME = N'6 Beech/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'325',
+--	@TERM_NAME = N'7 Mountainous/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'326',
+--	@TERM_NAME = N'8 Thermophilous/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'327',
+--	@TERM_NAME = N'9 Brd evergreen/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'328',
+--	@TERM_NAME = N'10 Conifer/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'329',
+--	@TERM_NAME = N'11 Mire/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'330',
+--	@TERM_NAME = N'12 Floodplain/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'331',
+--	@TERM_NAME = N'13 Non-riverine/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'332',
+--	@TERM_NAME = N'14 Introduced/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 25,
+--		@Group_E = N'Area by age classes: 81-100 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'333',
+--	@TERM_NAME = N'Unclassified/81-100',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+
+
+
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'334',
+--	@TERM_NAME = N'1 Boreal/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'335',
+--	@TERM_NAME = N'2 Hemiboreal/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'336',
+--	@TERM_NAME = N'3 Alpine/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'337',
+--	@TERM_NAME = N'4 Acidophilous/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'338',
+--	@TERM_NAME = N'5 Mesophytic/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'339',
+--	@TERM_NAME = N'6 Beech/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'340',
+--	@TERM_NAME = N'7 Mountainous/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'341',
+--	@TERM_NAME = N'8 Thermophilous/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'342',
+--	@TERM_NAME = N'9 Brd evergreen/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'343',
+--	@TERM_NAME = N'10 Conifer/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'344',
+--	@TERM_NAME = N'11 Mire/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'345',
+--	@TERM_NAME = N'12 Floodplain/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'346',
+--	@TERM_NAME = N'13 Non-riverine/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'347',
+--	@TERM_NAME = N'14 Introduced/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 26,
+--		@Group_E = N'Area by age classes: 101-120 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'348',
+--	@TERM_NAME = N'Unclassified/101-120',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+
+
+
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'349',
+--	@TERM_NAME = N'1 Boreal/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'350',
+--	@TERM_NAME = N'2 Hemiboreal/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'351',
+--	@TERM_NAME = N'3 Alpine/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'352',
+--	@TERM_NAME = N'4 Acidophilous/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'353',
+--	@TERM_NAME = N'5 Mesophytic/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'354',
+--	@TERM_NAME = N'6 Beech/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'355',
+--	@TERM_NAME = N'7 Mountainous/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'356',
+--	@TERM_NAME = N'8 Thermophilous/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'357',
+--	@TERM_NAME = N'9 Brd evergreen/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'358',
+--	@TERM_NAME = N'10 Conifer/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'359',
+--	@TERM_NAME = N'11 Mire/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'360',
+--	@TERM_NAME = N'12 Floodplain/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'361',
+--	@TERM_NAME = N'13 Non-riverine/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'362',
+--	@TERM_NAME = N'14 Introduced/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 27,
+--		@Group_E = N'Area by age classes: 121-140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'363',
+--	@TERM_NAME = N'Unclassified/121-140',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+
+
+
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'364',
+--	@TERM_NAME = N'1 Boreal/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'365',
+--	@TERM_NAME = N'2 Hemiboreal/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'366',
+--	@TERM_NAME = N'3 Alpine/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'367',
+--	@TERM_NAME = N'4 Acidophilous/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'368',
+--	@TERM_NAME = N'5 Mesophytic/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'369',
+--	@TERM_NAME = N'6 Beech/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'370',
+--	@TERM_NAME = N'7 Mountainous/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'371',
+--	@TERM_NAME = N'8 Thermophilous/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'372',
+--	@TERM_NAME = N'9 Brd evergreen/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'373',
+--	@TERM_NAME = N'10 Conifer/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'374',
+--	@TERM_NAME = N'11 Mire/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'375',
+--	@TERM_NAME = N'12 Floodplain/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'376',
+--	@TERM_NAME = N'13 Non-riverine/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'377',
+--	@TERM_NAME = N'14 Introduced/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 28,
+--		@Group_E = N'Area by age classes: >140 (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'378',
+--	@TERM_NAME = N'Unclassified/140+',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+
+
+
+
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 38,
+--		@Topic_E = N'1. Boreal forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'379',
+--	@TERM_NAME = N'1 Boreal/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 39,
+--		@Topic_E = N'2. Hemiboreal and nemoral coniferous and mixed broadleaved-coniferous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'380',
+--	@TERM_NAME = N'2 Hemiboreal/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+-- 
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 40,
+--		@Topic_E = N'3. Alpine forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'381',
+--	@TERM_NAME = N'3 Alpine/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 41,
+--		@Topic_E = N'4. Acidophilous oak and oak-birch forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'382',
+--	@TERM_NAME = N'4 Acidophilous/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 42,
+--		@Topic_E = N'5. Mesophytic deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'383',
+--	@TERM_NAME = N'5 Mesophytic/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 43,
+--		@Topic_E = N'6. Beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'384',
+--	@TERM_NAME = N'6 Beech/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 44,
+--		@Topic_E = N'7. Mountainous beech forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'385',
+--	@TERM_NAME = N'7 Mountainous/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 45,
+--		@Topic_E = N'8. Thermophilous deciduous forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'386',
+--	@TERM_NAME = N'8 Thermophilous/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 46,
+--		@Topic_E = N'9. Broadleaved evergreen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'387',
+--	@TERM_NAME = N'9 Brd evergreen/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 47,
+--		@Topic_E = N'10. Coniferous forests of the Mediterranean, Anatolian and Macaronesian regions',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'388',
+--	@TERM_NAME = N'10 Conifer/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 48,
+--		@Topic_E = N'11. Mire and swamp forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'389',
+--	@TERM_NAME = N'11 Mire/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 49,
+--		@Topic_E = N'12. Floodplain forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'390',
+--	@TERM_NAME = N'12 Floodplain/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 50,
+--		@Topic_E = N'13. Non-riverine alder, birch or aspen forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'391',
+--	@TERM_NAME = N'13 Non-riverine/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 51,
+--		@Topic_E = N'14. Introduced tree species forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'392',
+--	@TERM_NAME = N'14 Introduced/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 52,
+--		@Topic_E = N'Unclassified stocked forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 29,
+--		@Group_E = N'Area by age classes: Unspecified (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 22,
+--		@ReportingForm_E = N'Form 1.3c: Age structure - Age class distribution (even aged stands) by European Forest Types',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'393',
+--	@TERM_NAME = N'Unclassified/Unspec age',
+--	@STATE_STRUCTURE_NAME = N'F1.3c';
+
+EXECUTE usp_DROP_CREATE_DATA_Excluded 'n'; -- Drop the DATA_Excluded table.
+--COMMIT TRANSACTION;
+ROLLBACK TRANSACTION;
+GO

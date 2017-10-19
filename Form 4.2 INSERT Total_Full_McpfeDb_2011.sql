@@ -1,0 +1,224 @@
+USE Timber --Inserting mcpfe-2011 data into Total_Full_McpfeDb_2011
+GO
+BEGIN TRANSACTION;
+EXECUTE usp_DROP_CREATE_DATA_Excluded 'y'; -- Drop & create the DATA_Excluded table for the data to be exlcluded from uploading the Total_Full_McpfeDb_2011 table by the usp_INSERT_Total_Full_McpfeDb_2011 procedure.
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 1,
+--		@Topic_E = N'Forest',
+--	@Insert_Group = 'y',
+--		@Group_ID = 63,
+--		@Group_E = N'Natural regeneration and natural expansion of forest (1000 ha)',
+--	@Insert_ReportingForm = 'y', 
+--		@ReportingForm_ID = 20,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Area of forest land by regeneration type',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'215',
+--	@TERM_NAME = N'Forest/Nat regen',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 36,
+--		@Topic_E = N'Forest: even-aged stands',
+--	@Insert_Group = 'n',
+--		@Group_ID = 63,
+--		@Group_E = N'Natural regeneration and natural expansion of forest (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 20,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Area of forest land by regeneration type',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'216',
+--	@TERM_NAME = N'Forest evenaged/Nat regen',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 37,
+--		@Topic_E = N'Forest: uneven-aged stands',
+--	@Insert_Group = 'n',
+--		@Group_ID = 63,
+--		@Group_E = N'Natural regeneration and natural expansion of forest (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 20,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Area of forest land by regeneration type',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'217',
+--	@TERM_NAME = N'Forest unevenaged/Nat regen',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 1,
+--		@Topic_E = N'Forest',
+--	@Insert_Group = 'y',
+--		@Group_ID = 64,
+--		@Group_E = N'Afforestation and regeneration by planting and/or seeding and/or coppice: Total (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 20,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Area of forest land by regeneration type',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'218',
+--	@TERM_NAME = N'Forest/Planting',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 36,
+--		@Topic_E = N'Forest: even-aged stands',
+--	@Insert_Group = 'n',
+--		@Group_ID = 64,
+--		@Group_E = N'Afforestation and regeneration by planting and/or seeding and/or coppice: Total (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 20,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Area of forest land by regeneration type',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'219',
+--	@TERM_NAME = N'Forest evenaged/Planting',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 37,
+--		@Topic_E = N'Forest: uneven-aged stands',
+--	@Insert_Group = 'n',
+--		@Group_ID = 64,
+--		@Group_E = N'Afforestation and regeneration by planting and/or seeding and/or coppice: Total (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 20,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Area of forest land by regeneration type',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'220',
+--	@TERM_NAME = N'Forest unevenaged/Planting',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 1,
+--		@Topic_E = N'Forest',
+--	@Insert_Group = 'y',
+--		@Group_ID = 65,
+--		@Group_E = N'Afforestation and regeneration by planting and/or seeding and/or coppice: Coppice sprouting (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 20,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Area of forest land by regeneration type',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'221',
+--	@TERM_NAME = N'Forest/Coppice',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 36,
+--		@Topic_E = N'Forest: even-aged stands',
+--	@Insert_Group = 'n',
+--		@Group_ID = 65,
+--		@Group_E = N'Afforestation and regeneration by planting and/or seeding and/or coppice: Coppice sprouting (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 20,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Area of forest land by regeneration type',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'222',
+--	@TERM_NAME = N'Forest evenaged/Coppice',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 37,
+--		@Topic_E = N'Forest: uneven-aged stands',
+--	@Insert_Group = 'n',
+--		@Group_ID = 65,
+--		@Group_E = N'Afforestation and regeneration by planting and/or seeding and/or coppice: Coppice sprouting (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 20,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Area of forest land by regeneration type',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'223',
+--	@TERM_NAME = N'Forest unevenaged/Coppice',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'y',
+--		@Topic_ID = 60,
+--		@Topic_E = N'Natural expansion of forest',
+--	@Insert_Group = 'n',
+--		@Group_ID = 63,
+--		@Group_E = N'Natural regeneration and natural expansion of forest (1000 ha)',
+--	@Insert_ReportingForm = 'y', 
+--		@ReportingForm_ID = 21,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Annual forest regeneration',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'224',
+--	@TERM_NAME = N'Annual nat exp',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'y',
+--		@Topic_ID = 61,
+--		@Topic_E = N'Regeneration',
+--	@Insert_Group = 'n',
+--		@Group_ID = 63,
+--		@Group_E = N'Natural regeneration and natural expansion of forest (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 21,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Annual forest regeneration',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'225',
+--	@TERM_NAME = N'Annual regen/Nat regen',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'y',
+--		@Topic_ID = 62,
+--		@Topic_E = N'Afforestation',
+--	@Insert_Group = 'n',
+--		@Group_ID = 64,
+--		@Group_E = N'Afforestation and regeneration by planting and/or seeding and/or coppice: Total (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 21,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Annual forest regeneration',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'226',
+--	@TERM_NAME = N'Annual affor',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+--
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 61,
+--		@Topic_E = N'Regeneration',
+--	@Insert_Group = 'n',
+--		@Group_ID = 64,
+--		@Group_E = N'Afforestation and regeneration by planting and/or seeding and/or coppice: Total (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 21,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Annual forest regeneration',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'227',
+--	@TERM_NAME = N'Annual regen/Planting',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+
+
+--EXECUTE usp_INSERT_Total_Full_McpfeDb_2011
+--	@Insert_Topic = 'n',
+--		@Topic_ID = 61,
+--		@Topic_E = N'Regeneration',
+--	@Insert_Group = 'n',
+--		@Group_ID = 65,
+--		@Group_E = N'Afforestation and regeneration by planting and/or seeding and/or coppice: Coppice sprouting (1000 ha)',
+--	@Insert_ReportingForm = 'n', 
+--		@ReportingForm_ID = 21,
+--		@ReportingForm_E = N'Form 4.2: Regeneration - Annual forest regeneration',
+--	@Subgroup_ID = 1,
+--	@DIMENSION_ID = N'228',
+--	@TERM_NAME = N'Annual regen/Coppice',
+--	@STATE_STRUCTURE_NAME = N'F4.2';
+
+EXECUTE usp_DROP_CREATE_DATA_Excluded 'n'; -- Drop the DATA_Excluded table.
+--COMMIT TRANSACTION;
+ROLLBACK TRANSACTION;
+GO
